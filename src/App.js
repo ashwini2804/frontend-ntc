@@ -7,10 +7,20 @@ import Cart from './Cart';
 import Login from './Login';
 import Signup from './Signup';
 import Admin from './Admin';
+import { createContext,UseContext,useState } from 'react';
+// import { UserContext } from './App5';
 
+export const UserContext = createContext();
 export default function App() {
+  const [name,setName] = useState();
+  const [cart,setCart] = useState({});
+  const [products,setProducts] = useState([])
   return (
     <div>
+      <UserContext.Provider value={{name,setName,cart,setCart,products,setProducts}}> 
+    
+        {name} 
+        
      <BrowserRouter>
         <Header name="John" age={25}/>
         
@@ -29,7 +39,7 @@ export default function App() {
 
     </BrowserRouter>
        
-        
+    </UserContext.Provider>
     </div>
   )
 }

@@ -1,0 +1,11 @@
+.row{
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.sumBox{
+    margin: 10px;
+    padding: 20px;
+    background-color: orange;
+}
